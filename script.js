@@ -33,7 +33,7 @@ document.getElementById("generate").addEventListener("click", function () {
       var specialCharacters = confirm("Include special characters? (OK = Yes. Cancel = No.)");
       if (specialCharacters == true) {
         console.log("Include Special Characters");
-        var specialArray = "!@#$%^&*()?<>,./;:[]{}|";
+        var specialArray = ` !"#$%&'()*+,-./:;<=>?@[]^_{|}~`;
       } else {
         console.log("No Special Characters");
         var specialArray = "";
