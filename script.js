@@ -8,7 +8,8 @@ document.getElementById("generate").addEventListener("click", function () {
     // continue if response is a number between 8-128
     if (!Number.isNaN(howLong) && howLong <= 128 && howLong >= 8) {
       console.log("It's an allowed number! Number of Characters = " + howLong);
-  
+
+  //uppercase prompt & array
       var uppercase = confirm("Include Uppercase characters? (OK = yes, Cancel = all lowercase.)");
       if (uppercase == true) {
         console.log("Include Uppercase");
@@ -18,6 +19,7 @@ document.getElementById("generate").addEventListener("click", function () {
         var upperAZ = "";
       };
   
+      // numbers prompt and array 
       var numbers = confirm("Include numbers in password? (OK = yes, Cancel = no.)");
       if (numbers == true) {
         console.log("Include Numbers");
@@ -27,6 +29,7 @@ document.getElementById("generate").addEventListener("click", function () {
         var numberArray = "";
       };
   
+      // special characters prompt and array 
       var specialCharacters = confirm("Include special characters? i.e.  @#$%^&* etc.  (OK = yes, Cancel = no.)");
       if (specialCharacters == true) {
         console.log("Include Special Characters");
@@ -36,39 +39,34 @@ document.getElementById("generate").addEventListener("click", function () {
         var specialArray = "";
       };
   
+      // lower case (permanent) array 
       var aZ = "abcdefghijklmnopqrstuvwxyz";
+
+      //concats all 4 arrays (array vars are defined in prompts)
       passwordArray = aZ.concat(upperAZ.concat(numberArray.concat(specialArray)));
-  
+
+      // Password Generator function
       generatePassword();
-  
       function generatePassword() {
-        var newRandomPassword = "";
+        var randomPassword = "";
     
+        // iterates and updates password from combined array 
         var i;
         for (i = 0; i < howLong; i++) {
-          var randomPassword = passwordArray[Math.floor(Math.random() * passwordArray.length)];
-          // console.log("array = " + passwordArray);
-          // console.log("password = " + randomPassword);
-          newRandomPassword += randomPassword;
-          
+          var randomSelect = passwordArray[Math.floor(Math.random() * passwordArray.length)];
+          randomPassword += randomSelect;
         };
-        console.log("new pass is = " + newRandomPassword);
-        document.getElementById("password").innerHTML = newRandomPassword;
+
+        // Displays generated password
+        console.log("Your new passwor is " + randomPassword);
+        document.getElementById("password").innerHTML = randomPassword;
+
         
       };
   
-      // Length Prompt- Tells user response is invalid- not a number and exits prompt
+      // Length Prompt- Tells user response is invalid and exits prompt
     } else {
       alert("Hmmm... that isn't right. Remember it needs to be a number between 8-128. Try again.");
-      console.log(`Come on... you knew that wasn't going to work. Hey TA, did you catch my use of temporal literals and a conditional console.log(); here? Not saying you should give me extra credit, but also not saying you shouldn't. ;)`);
+      console.log(`Come on... you knew that wasn't going to work, `);
     };
-  
-  
-    //display generated password as html (var)
-    // document.getElementById("password").innerHTML = "WubbaLubbaDubDub";
-  
   });
-  
-  //apply/generate pass based on prompts above
-  
-  //display password to HTML
