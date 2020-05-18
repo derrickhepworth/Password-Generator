@@ -3,14 +3,14 @@ document.getElementById("generate").addEventListener("click", function () {
 
 
     //Length Prompt
-    var howLong = Number(prompt('How long would you like your password to be? Enter a number between 8-128.'));
+    var howLong = Number(prompt('How many characters? Enter a number between 8-128.'));
   
     // continue if response is a number between 8-128
     if (!Number.isNaN(howLong) && howLong <= 128 && howLong >= 8) {
       console.log("It's an allowed number! Number of Characters = " + howLong);
 
   //uppercase prompt & array
-      var uppercase = confirm("Include Uppercase characters? (OK = yes, Cancel = all lowercase.)");
+      var uppercase = confirm("Include Uppercase characters? (OK = yes. Cancel = No.)");
       if (uppercase == true) {
         console.log("Include Uppercase");
         var upperAZ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
@@ -20,7 +20,7 @@ document.getElementById("generate").addEventListener("click", function () {
       };
   
       // numbers prompt and array 
-      var numbers = confirm("Include numbers in password? (OK = yes, Cancel = no.)");
+      var numbers = confirm("Include numbers in password? (OK = Yes. Cancel = No.)");
       if (numbers == true) {
         console.log("Include Numbers");
         var numberArray = "0123456789";
@@ -30,7 +30,7 @@ document.getElementById("generate").addEventListener("click", function () {
       };
   
       // special characters prompt and array 
-      var specialCharacters = confirm("Include special characters? i.e.  @#$%^&* etc.  (OK = yes, Cancel = no.)");
+      var specialCharacters = confirm("Include special characters? (OK = Yes. Cancel = No.)");
       if (specialCharacters == true) {
         console.log("Include Special Characters");
         var specialArray = "!@#$%^&*()?<>,./;:[]{}|";
@@ -67,6 +67,6 @@ document.getElementById("generate").addEventListener("click", function () {
       // Length Prompt- Tells user response is invalid and exits prompt
     } else {
       alert("Hmmm... that isn't right. Remember it needs to be a number between 8-128. Try again.");
-      console.log(`Come on... you knew that wasn't going to work, `);
+      console.log(`Come on... you knew that wasn't going to work. `);
     };
   });
