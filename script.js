@@ -20,7 +20,7 @@ document.getElementById("generate").addEventListener("click", function () {
   
       var numbers = confirm("Include numbers in password? (OK = yes, Cancel = no.)");
       if (numbers == true) {
-        console.log("Include numbers");
+        console.log("Include Numbers");
         var numberArray = "0123456789";
       } else {
         console.log("No Numbers");
@@ -47,8 +47,8 @@ document.getElementById("generate").addEventListener("click", function () {
         var i;
         for (i = 0; i < howLong; i++) {
           var randomPassword = passwordArray[Math.floor(Math.random() * passwordArray.length)];
-          console.log("array = " + passwordArray);
-          console.log("password = " + randomPassword);
+          // console.log("array = " + passwordArray);
+          // console.log("password = " + randomPassword);
           newRandomPassword += randomPassword;
           
         };
